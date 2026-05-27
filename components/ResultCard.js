@@ -5,7 +5,7 @@ export default function ResultCard({ gas, etanol, resultado, porcentagem }) {
   return (
     <View style={styles.card}>
       <Text style={styles.destaque}>
-        Abasteça com {resultado}.
+        {resultado}
       </Text>
       <Text style={styles.texto}>
         O Etanol está custando {porcentagem}% do preço da Gasolina.

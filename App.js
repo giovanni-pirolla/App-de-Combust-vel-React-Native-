@@ -16,9 +16,13 @@ export default function App() {
     const calculoPorcentagem = precoEtanol / precoGas;
 
     if (calculoPorcentagem <= 0.7) {
-      setResultado('Etanol');
-    } else {
-      setResultado('Gasolina');
+      setResultado('Abasteça com Etanol');
+    } else if (precoGas == precoEtanol) {
+      setResultado('Abasteça com qualquer um dos dois');
+    }else if(calculoPorcentagem > 0.7) {
+      setResultado('Abasteça com Gasolina');
+    }else {
+      setResultado('Valores inválidos');
     }
 
     setPorcentagem((calculoPorcentagem * 100).toFixed(2));

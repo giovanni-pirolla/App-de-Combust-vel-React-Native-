@@ -16,13 +16,13 @@ export default function App() {
     const calculoPorcentagem = precoEtanol / precoGas;
 
     if (calculoPorcentagem <= 0.7) {
-      setResultado('Abasteça com Etanol');
+      setResultado('Abasteça com Etanol.');
     } else if (precoGas == precoEtanol) {
-      setResultado('Abasteça com qualquer um dos dois');
+      setResultado('Abasteça com qualquer um dos dois.');
     }else if(calculoPorcentagem > 0.7) {
-      setResultado('Abasteça com Gasolina');
+      setResultado('Abasteça com Gasolina.');
     }else {
-      setResultado('Valores inválidos');
+      setResultado('Valores inválidos.');
     }
 
     setPorcentagem((calculoPorcentagem * 100).toFixed(2));
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   },
   titulo: {
     fontSize: 26,
-    padding: 42,
+    padding: 45,
     fontFamily: 'fantasy',
     backgroundColor: '#f8cb00',
   },

@@ -10,13 +10,18 @@ export default function App() {
   const [porcentagem, setPorcentagem] = useState('');
 
   function verificarVantagem() {
-    setPorcentagem(((etanol / gas) * 100).toFixed(2));
+    const precoGas = parseFloat(gas.replace(',', '.'));
+    const precoEtanol = parseFloat(etanol.replace(',', '.'));
 
-    if (porcentagem <= 70) {
+    const calculoPorcentagem = precoEtanol / precoGas;
+
+    if (calculoPorcentagem <= 0.7) {
       setResultado('Etanol');
     } else {
       setResultado('Gasolina');
     }
+
+    setPorcentagem((calculoPorcentagem * 100).toFixed(2));
   }
 
   return (
